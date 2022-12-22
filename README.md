@@ -78,4 +78,7 @@ Using edge computing for object detection, the total delay from object detection
 
 A network of interconnected cyber-physical systems was constructed. Computation and transfer delays are introduced when signals are computed and transmitted from one device to another. As a result, the system lags after commands have been sent. The delay depends on the number of devices in the network. When using PI to process object detection, a significant delay was introduced. The delay in object detection in the network was eliminated with the introduction of edge computing. When compared to object detection using a Raspberry Pi, edge computing reduces object detection time by around 7 times. The combination of edge computing with a high-performance hardware device result in a significant decrease of total network delay. The delay in writing and reading from the PLC memory was thoroughly investigated and analyzed. A holistic method for determining the delay of an interconnected network of devices and solutions for the delay was proposed.
 
+### This work is supported by NSF Awards No. 1646458 and No. 2146968.
+
+
 ### Appendix
