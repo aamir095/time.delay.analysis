@@ -46,4 +46,11 @@ The video is captured by the camera, which is then processed by the Yolov5 algor
 ![block diagram](https://user-images.githubusercontent.com/48818645/209212790-97291674-bcb6-4d50-87ca-2785cdc6506f.PNG)
 
 
+## Experimental Setup and Results
+
+### A. Experiment Setup
+The list of hardware implemented in this experiment is described in detail in section 3. The hardware configuration and specifics are detailed in this section. The testbed consists of devices such as a Programmable Logic Controller (PLC), two Raspberry PI, camera, conveyor belt, robotic arm, and high-performance laptop for edge computing. The camera records video of the conveyor belt to detect objects. The Raspberry Pi is used in the first scenario to analyze video and detect objects on the conveyor belt. In the second scenario, video is sent via TCP to another high-performance device for processing and object detection. Both devices' processing times were monitored and studied. Following the discovery of an object of interest on the conveyor belt. The Raspberry Pi informs the PLC that an object has been detected. The PLC then stops the conveyor belt from moving and the second PI controlling the robotic arm reads the data from the PLC. The PI directs the robotic arm to do the desired task. The figure 5 illustrates all the hardware used in the experiment.
+
+
+![hardware testbed](https://user-images.githubusercontent.com/48818645/209214015-2d465331-da3f-4627-963d-839179c83ca4.PNG)
 
