@@ -21,6 +21,29 @@ In this section, the brief explanation regarding the hardware, software, and cha
 
 ### A. Hardware
 
+One PI controls the camera, while the other controls the  robotic arm. The PLC functions as a central station, receiving  signals from one PI and sending them to another. Let's go over  each component in the testbed and their functions. Only the  physical operation is defined in this section and software  which operates hardware will be discussed later. The functions  of each device in the testbed are listed in table. 
+
+![device with the functions](https://user-images.githubusercontent.com/48818645/209210582-75fce2db-d1ab-494f-915b-598f12b31868.PNG)
+
+The conveyor belt was improved, and a 24v 5RPM motor was installed. The motor can be controlled directly by the PLC. The testbed's sequential operation is described below.
+1. The PI1 camera continuously monitors the object on the conveyor belt as it moves. The PLC is used to control the conveyor belt. The PI camera will be at some height above the conveyor belt. 
+2. If the camera detects our target objects, PI1 sends commands to the PLC. 
+3. The PLC receives information about the object's class and location. The PLC sends the same data to the PI2. The PLC then instructs the conveyor belt to come to a halt. 
+4. The PLC sends signals to the PI2 with robotic arm about the object's class and location. The arm's servo motors are then given commands to perform a specific task for that object. 
+5. This process continues. 
+
+Signals travel from various nodes and devices to detect objects and move robotic arms. The signals are computed at each device, which increases the signal delay. We're looking for a delay in signal transmission between nodes in this experiment.
+
+
+### B. Software
+
+Hardware cannot run standalone. The backbone that drives  the hardware is software. Python is used to program the  Raspberry Pi and robotic arm. Ladder programming is used in  PLCs. The figure 3 explains about the modules and software  used. 
+
+![software n it's function](https://user-images.githubusercontent.com/48818645/209211856-2d45f788-1427-448f-9ac3-000c074f36af.PNG)
+
+The video is captured by the camera, which is then processed by the Yolov5 algorithm (via PI1) to detect the object. The Raspberry Pi's object detection time is quite long. Using the snap7 python library, the object's class is written into the PLC's data base memory. After reading the PLC's memory about the object's location and class, PI2 controls the robotic arm.
+
+![block diagram](https://user-images.githubusercontent.com/48818645/209212790-97291674-bcb6-4d50-87ca-2785cdc6506f.PNG)
 
 
 
