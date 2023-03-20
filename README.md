@@ -81,7 +81,6 @@ A network of interconnected cyber-physical systems was constructed. Computation 
 #### This work was supported by National Science Foundation(NSF) Awards No. 1646458 and No. 2146968.
 
 
-### Appendix
 
-Youtube Video:
-https://www.youtube.com/watch?v=0NaJBEI90Lk
+
+
